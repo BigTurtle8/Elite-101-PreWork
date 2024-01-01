@@ -46,10 +46,27 @@ def printErrorMessage():
   print('I am sorry, but that is not a valid option. ' +
         'Type \'1\', \'2\', \'3\', or \'4\' to select an option.')
 
+def printConversationMessage(option):
+  # newline for styling
+  print()
+  print(getConversationMessage(option))
+
+def getConversationMessage(option):
+  if option == '1':
+    return 'Placeholder 1 Response'
+    
+  elif option == '2':
+    return 'Placeholder 2 Response'
+    
+  elif option == '3':
+    return 'Placeholder 3 Response'
+
+  return None
+
 def printContinueMessage():
   print()
   print('Is there anything else you would like help with, ' + name + '?')
-  
+
 if __name__ == '__main__':
   print('Elite101 Chatbot')
   print()
@@ -67,9 +84,10 @@ if __name__ == '__main__':
       option = getConversationChoice()
   
     if option == '4':
+      # printExitMessage()
       break
 
-    # respond based on conversation choice
+    printConversationMessage(option)
 
     printContinueMessage()
     
