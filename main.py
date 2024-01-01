@@ -1,18 +1,4 @@
-def getMessage(name, age):
-  if age < 15:
-    return 'Hello little one! How can I help you, ' + name + '?'
-  elif 15 <= age and age < 18:
-    return 'Hello! How can I help a young adult like yourself, ' + name + '?'
-  elif 18 <= age and age < 55:
-    return 'Hello! How can I be of assistance to you, ' + name + '?'
-  elif 55 <= age and age < 120:
-    return 'Hey, I remember when I was that young! How can I help, ' + name + '?'
-  elif age >= 120:
-    return 'Well, I hope I live to your age! How can I help, ' + name + '?'
-
-if __name__ == '__main__':
-  print('Elite101 Chatbot')
-  print('')
+def getUserInfo():
   name = input('Hello! I am a chatbot designed to help you. What is your name? ')
   
   while True:
@@ -27,20 +13,63 @@ if __name__ == '__main__':
         continue
       else:
         break
+  
+  return name, age
+
+def getMessage(name, age):
+  if age < 15:
+    return 'Hello little one! How can I help you, ' + name + '?'
+  elif 15 <= age and age < 18:
+    return 'Hello! How can I help a young adult like yourself, ' + name + '?'
+  elif 18 <= age and age < 55:
+    return 'Hello! How can I be of assistance to you, ' + name + '?'
+  elif 55 <= age and age < 120:
+    return 'Hey, I remember when I was that young! How can I help, ' + name + '?'
+  elif age >= 120:
+    return 'Well, I hope I live to your age! How can I help, ' + name + '?'
+
+def printConversationMenu():
+  print('Select one of the following options: ')
+  print('1. Placeholder 1')
+  print('2. Placeholder 2')
+  print('3. Placeholder 3')
+  print('4. Exit')
+
+def getConversationChoice():
+  # newline for style
+  print()
+  printConversationMenu()
+  return input('Please enter the number of your chosen option: ')
+
+def printErrorMessage():
+  print()
+  print('I am sorry, but that is not a valid option. ' +
+        'Type \'1\', \'2\', \'3\', or \'4\' to select an option.')
+
+def printContinueMessage():
+  print()
+  print('Is there anything else you would like help with, ' + name + '?')
+  
+if __name__ == '__main__':
+  print('Elite101 Chatbot')
+  print()
+
+  name, age = getUserInfo()
 
   print(getMessage(name, age))  
 
-  # newline for style
-  option = 0
-
-  while option not in [str(x) for x in range(1, 4)]:
-    print()
+  while True:
+    option = getConversationChoice()
   
-    print('Select one of the following options: ')
-    print('1. Placeholder 1')
-    print('2. Placeholder 2')
-    print('3. Placeholder 3')
-    print('4. Exit')
-    option = input('Please enter the number of your chosen option: ')
+    while option not in [str(x) for x in range(1, 5)]:
+      printErrorMessage()
+      
+      option = getConversationChoice()
+  
+    if option == '4':
+      break
 
+    # respond based on conversation choice
+
+    printContinueMessage()
     
