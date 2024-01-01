@@ -29,3 +29,18 @@ if __name__ == '__main__':
         break
 
   print(getMessage(name, age))  
+
+  # newline for style
+  option = 0
+
+  while option not in [str(x) for x in range(1, 4)]:
+    print()
+  
+    print('Select one of the following options: ')
+    print('1. Placeholder 1')
+    print('2. Placeholder 2')
+    print('3. Placeholder 3')
+    print('4. Exit')
+    option = input('Please enter the number of your chosen option: ')
+
+    
