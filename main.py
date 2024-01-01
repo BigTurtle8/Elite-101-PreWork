@@ -63,11 +63,11 @@ def getConversationMessage(option):
 
   return None
 
-def printContinueMessage():
+def printContinueMessage(name):
   print()
   print('Is there anything else you would like help with, ' + name + '?')
 
-def printExitMessage():
+def printExitMessage(name):
   print()
   print(' <> I hope I was helpful, ' + name + '. Goodbye! <>')
 
@@ -88,10 +88,10 @@ if __name__ == '__main__':
       option = getConversationChoice()
   
     if option == '4':
-      printExitMessage()
+      printExitMessage(name)
       break
 
     printConversationMessage(option)
 
-    printContinueMessage()
+    printContinueMessage(name)
     
