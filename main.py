@@ -67,6 +67,10 @@ def printContinueMessage():
   print()
   print('Is there anything else you would like help with, ' + name + '?')
 
+def printExitMessage():
+  print()
+  print(' <> I hope I was helpful, ' + name + '. Goodbye! <>')
+
 if __name__ == '__main__':
   print('Elite101 Chatbot')
   print()
@@ -84,7 +88,7 @@ if __name__ == '__main__':
       option = getConversationChoice()
   
     if option == '4':
-      # printExitMessage()
+      printExitMessage()
       break
 
     printConversationMessage(option)
